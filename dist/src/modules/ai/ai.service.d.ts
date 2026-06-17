@@ -5,6 +5,7 @@ export declare class AIService implements OnModuleInit {
     private configService;
     private readonly logger;
     private provider;
+    private isProviderHealthy;
     constructor(configService: ConfigService);
     onModuleInit(): Promise<void>;
     generateText(prompt: string, context?: Record<string, any>): Promise<string>;
@@ -34,4 +35,8 @@ export declare class AIService implements OnModuleInit {
     }>;
     health(): Promise<boolean>;
     getProvider(): AIProvider;
+    private generateMockText;
+    private generateMockExtractedData;
+    private generateMockDisclosureAnalysis;
+    private generateMockOfferAnalysis;
 }
