@@ -37,7 +37,8 @@ let PropertyController = class PropertyController {
 };
 exports.PropertyController = PropertyController;
 __decorate([
-    (0, common_1.Post)(),
+    (0, common_1.Post)('api/v1/properties'),
+    (0, common_1.Post)('property'),
     (0, common_1.HttpCode)(common_1.HttpStatus.CREATED),
     (0, swagger_1.ApiOperation)({ summary: 'Create a new property' }),
     (0, swagger_1.ApiResponse)({
@@ -51,7 +52,8 @@ __decorate([
     __metadata("design:returntype", Promise)
 ], PropertyController.prototype, "create", null);
 __decorate([
-    (0, common_1.Get)(),
+    (0, common_1.Get)('api/v1/properties'),
+    (0, common_1.Get)('property'),
     (0, swagger_1.ApiOperation)({ summary: 'Get all properties' }),
     (0, swagger_1.ApiResponse)({
         status: 200,
@@ -63,7 +65,8 @@ __decorate([
     __metadata("design:returntype", Promise)
 ], PropertyController.prototype, "findAll", null);
 __decorate([
-    (0, common_1.Get)(':id'),
+    (0, common_1.Get)('api/v1/properties/:id'),
+    (0, common_1.Get)('property/:id'),
     (0, swagger_1.ApiOperation)({ summary: 'Get property by ID' }),
     (0, swagger_1.ApiParam)({ name: 'id', description: 'Property ID (UUID)' }),
     (0, swagger_1.ApiResponse)({
@@ -93,7 +96,7 @@ __decorate([
 ], PropertyController.prototype, "getDashboardData", null);
 exports.PropertyController = PropertyController = __decorate([
     (0, swagger_1.ApiTags)('Properties'),
-    (0, common_1.Controller)('api/v1/properties'),
+    (0, common_1.Controller)(),
     __metadata("design:paramtypes", [property_service_1.PropertyService])
 ], PropertyController);
 //# sourceMappingURL=property.controller.js.map

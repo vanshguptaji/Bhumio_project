@@ -26,24 +26,22 @@ import { DatabaseService } from './database.service';
     {
       provide: PropertyRepository,
       inject: [DataSource],
-      useFactory: (dataSource: DataSource) => dataSource.getRepository(Property),
+  useFactory: (dataSource: DataSource) => new PropertyRepository(dataSource),
     },
     {
       provide: DisclosureRepository,
       inject: [DataSource],
-      useFactory: (dataSource: DataSource) =>
-        dataSource.getRepository(Disclosure),
+  useFactory: (dataSource: DataSource) => new DisclosureRepository(dataSource),
     },
     {
       provide: OfferRepository,
       inject: [DataSource],
-      useFactory: (dataSource: DataSource) => dataSource.getRepository(Offer),
+  useFactory: (dataSource: DataSource) => new OfferRepository(dataSource),
     },
     {
       provide: LoanDocumentRepository,
       inject: [DataSource],
-      useFactory: (dataSource: DataSource) =>
-        dataSource.getRepository(LoanDocument),
+  useFactory: (dataSource: DataSource) => new LoanDocumentRepository(dataSource),
     },
   ],
   exports: [

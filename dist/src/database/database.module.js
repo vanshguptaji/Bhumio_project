@@ -28,22 +28,22 @@ exports.DatabaseModule = DatabaseModule = __decorate([
             {
                 provide: repositories_1.PropertyRepository,
                 inject: [typeorm_2.DataSource],
-                useFactory: (dataSource) => dataSource.getRepository(entities_1.Property),
+                useFactory: (dataSource) => new repositories_1.PropertyRepository(dataSource),
             },
             {
                 provide: repositories_1.DisclosureRepository,
                 inject: [typeorm_2.DataSource],
-                useFactory: (dataSource) => dataSource.getRepository(entities_1.Disclosure),
+                useFactory: (dataSource) => new repositories_1.DisclosureRepository(dataSource),
             },
             {
                 provide: repositories_1.OfferRepository,
                 inject: [typeorm_2.DataSource],
-                useFactory: (dataSource) => dataSource.getRepository(entities_1.Offer),
+                useFactory: (dataSource) => new repositories_1.OfferRepository(dataSource),
             },
             {
                 provide: repositories_1.LoanDocumentRepository,
                 inject: [typeorm_2.DataSource],
-                useFactory: (dataSource) => dataSource.getRepository(entities_1.LoanDocument),
+                useFactory: (dataSource) => new repositories_1.LoanDocumentRepository(dataSource),
             },
         ],
         exports: [

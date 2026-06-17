@@ -12,11 +12,12 @@ import { PropertyService } from './property.service';
 import { CreatePropertyDto, PropertyResponseDto } from './dto';
 
 @ApiTags('Properties')
-@Controller('api/v1/properties')
+@Controller()
 export class PropertyController {
   constructor(private readonly propertyService: PropertyService) {}
 
-  @Post()
+  @Post('api/v1/properties')
+  @Post('property')
   @HttpCode(HttpStatus.CREATED)
   @ApiOperation({ summary: 'Create a new property' })
   @ApiResponse({
@@ -30,7 +31,8 @@ export class PropertyController {
     return this.propertyService.create(createDto);
   }
 
-  @Get()
+  @Get('api/v1/properties')
+  @Get('property')
   @ApiOperation({ summary: 'Get all properties' })
   @ApiResponse({
     status: 200,
@@ -41,7 +43,8 @@ export class PropertyController {
     return this.propertyService.findAll();
   }
 
-  @Get(':id')
+  @Get('api/v1/properties/:id')
+  @Get('property/:id')
   @ApiOperation({ summary: 'Get property by ID' })
   @ApiParam({ name: 'id', description: 'Property ID (UUID)' })
   @ApiResponse({
